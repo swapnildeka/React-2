@@ -1,0 +1,8 @@
+.parcel-cache
+dist
+node_modules
+.babelrc
+package-lock.json
+package.json
+~WRL1204.tmp
+
