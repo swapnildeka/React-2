@@ -3,6 +3,7 @@ class Profile extends React.Component{
 
     constructor(props) {
         super(props);
+        console.log("Child - constructor");
         //create state
         this.state ={
             count:0,
@@ -10,7 +11,13 @@ class Profile extends React.Component{
         };
     }
 
+    componentDidMount(){
+        //API call
+        console.log("Child - ComponentDidMount");
+    }
+
 render(){
+    console.log("Child - render");
     return (
         <div>
             <h1> Profile Class Component</h1>

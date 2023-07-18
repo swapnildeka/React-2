@@ -9,7 +9,7 @@ const [count2] =useState(0);
             <h2>Profile Functional component</h2>
             <h3>Name: {props.name}</h3>
             <h3>Count : {count}</h3>
-            <button onClick={()=>setCount(1)} count></button>
+            <button onClick={()=>setCount(count+1)} count></button>
 
         </div>
     );
