@@ -22,7 +22,7 @@ render(){
     <p>{" "} This is Chapter 7</p>
      
     <ProfileClassComponemt name={"Child 1"}/>
-    <ProfileClassComponemt name={"Child  2"}/> 
+     
       {/* this is ClassBased Component  */}
         {/* <Outlet/>  this is if we use FC , you can call outlet since we specified the element in children or directly call the component here */} 
     </div>

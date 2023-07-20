@@ -6,32 +6,32 @@ class Profile extends React.Component{
         console.log("Child - constructor");
         //create state
         this.state ={
-            count:0,
-            count2:0,
+            userInfo:{
+                name:"Dummy name",
+                location:"Dummy Location",
+
+            },
         };
     }
 
-    componentDidMount(){
+async componentDidMount(){
         //API call
-        console.log("Child - ComponentDidMount");
+        const data = await fetch("https://api.github.com/users/akshaymarch7");
+        const json = await data.json();
+        this.setState({
+            userInfo:json,
+        });
     }
 
 render(){
-    console.log("Child - render");
+    console.log("Child - render" +this.state);
     return (
         <div>
             <h1> Profile Class Component</h1>
-            <h2> Name : {this.props.name}</h2>
-            <h2> count : {this.props.count}</h2>
-            <button onClick={()=>{
-                //We don not mutate state directly
-                //We do not do this.state=something
-                this.setState(
-                    {
-                        count :1,
-                        count2 :2,
-                    });
-            }}></button>
+            <img src={this.state.userInfo.avatar_url}/>
+            <h2> Name : {this.state.userInfo.name}</h2>
+            <h2> location : {this.state.userInfo.location}</h2>
+            
         
         
         </div>
