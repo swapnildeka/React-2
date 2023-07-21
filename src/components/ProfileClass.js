@@ -23,6 +23,8 @@ async componentDidMount(){
         });
     }
 
+    
+
 render(){
     console.log("Child - render" +this.state);
     return (

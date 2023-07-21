@@ -6,13 +6,7 @@ import { Link } from "react-router-dom";
 import RestaurantMenu from "./restaurantMenu";
 //restaurant word doubt in filterdata function and restaurant cards.
 
-function filterdata(searchText , restaurants){
-    
-    const filterdata = restaurants.filter((xyz) =>
-        xyz?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-
-    return filterdata;
-    }
+import { filterdata } from "../utils/helper";
  
 
 
