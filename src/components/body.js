@@ -4,6 +4,7 @@ import RestaurantCard from "./restaurantcard";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import RestaurantMenu from "./restaurantMenu";
+import useOnline from "../utils/useOnline";
 //restaurant word doubt in filterdata function and restaurant cards.
 
 import { filterdata } from "../utils/helper";
@@ -33,6 +34,11 @@ const Body =()=>{
         setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
         
     }
+    const isOnline =useOnline();
+    if(!isOnline){
+        return <h1> Offline , please check your internet connection</h1>
+    }
+
     console.log("render");
     // not render component(Early return)
     if(!allRestaurants)return null;
