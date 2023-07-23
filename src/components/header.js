@@ -41,6 +41,9 @@ const Title = () => {
             <li>Contact</li>
             </Link>
             <li>Cart</li>
+            <Link to={"/instamart"}>
+            <li>Instamart</li>
+            </Link>
           </ul>
         </div>
         {isLoggedIn ? (

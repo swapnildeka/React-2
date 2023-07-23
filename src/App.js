@@ -1,15 +1,21 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import ReactDOM from  "react-dom/client";
 import Header from "./components/header";
 import Body from "./components/body";
 import Footer from "./components/footer";
-import About from "./components/about";
+
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import Error from "./components/error";
 import { Outlet } from "react-router-dom";
 import Contact from "./components/contact";
 import RestaurantMenu from "./components/restaurantMenu";
 import Profile from "./components/profile";
+import Shimmer from "./components/shimmer";
+
+
+const Instamart = lazy(()=>import("./components/instamart"));
+const About = lazy(()=>import("./components/about"));
+
 /* My Food App structure will look like this, 
             1) Header
                 - Logo
@@ -56,7 +62,9 @@ const appRouter = createBrowserRouter
   },
   {
     path :"/about",
-    element : <About/>,
+    element : (<Suspense fallback ={<h1>This is loading ...</h1>}>
+    <About/>
+    </Suspense>),
     children :[{
       path:"profile",
       element : <Profile name={"Swapnil"}/>,
@@ -69,9 +77,16 @@ const appRouter = createBrowserRouter
   {
     path :"/restaurant/:abcxyz",
     element:<RestaurantMenu/>
-
-
-  }
+},
+{
+path:"/instamart",
+element:
+(
+<Suspense fallback ={<Shimmer/>}>
+<Instamart/>
+</Suspense>
+)
+}
   ]
   }
 ]);
