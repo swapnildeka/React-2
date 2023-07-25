@@ -11,7 +11,7 @@ const Title = () => {
     return(
       <a href="/"> {/*why this */}
         <img
-        className="logo"
+        className="h-32"
         alt = "logo"
         src = "https://yt3.googleusercontent.com/ytc/AL5GRJXudT76175T4x4n7eslWM1YkgNLHDSSqfXGoadl=s900-c-k-c0x00ffffff-no-rj "
         />
@@ -24,25 +24,25 @@ const Title = () => {
     const [isLoggedIn , setIsLoggedIn] = useState(false);
 
      return(
-      <div className="header">
+      <div className="flex justify-between bg-pink-50 shadow-lg ">
         <Title/>
         <h1>{title}</h1>
-        <button onClick={()=> setTitle("New food app")}>Change title
-        </button>
-        <div className="nav-items">
-          <ul>
+      {/* <button onClick={()=> setTitle("New food app")}>Change title
+        </button> */}
+        <div >
+          <ul className="flex py-10">
             <Link to={"/"}>
-              <li>Home</li> 
+              <li className="px-2">Home</li> 
             </Link>
             <Link to={"/about"}>  {/*syntax similar to anchor tag*/}
-            <li>About</li>
+            <li className="px-2">About</li>
             </Link>
             <Link to={"/contact"}>
-            <li>Contact</li>
+            <li className="px-2">Contact</li>
             </Link>
-            <li>Cart</li>
+            <li className="px-2">Cart</li>
             <Link to={"/instamart"}>
-            <li>Instamart</li>
+            <li className="px-2">Instamart</li>
             </Link>
           </ul>
         </div>
