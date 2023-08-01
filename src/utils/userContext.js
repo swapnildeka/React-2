@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 const UserContext = createContext(
     {user :{
@@ -6,4 +6,5 @@ const UserContext = createContext(
         email:"Dummy email",
 
 }});
+UserContext.displayName ="UserContext";
 export default UserContext;
