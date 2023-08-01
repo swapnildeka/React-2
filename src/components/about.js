@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import ProfileClassComponemt from "./ProfileClass";
 import { Component } from "react";
+import UserContext from "../utils/userContext";
 
 class About extends Component{
     constructor(props) {
@@ -19,6 +20,14 @@ render(){
         
         <div>
     <h1>About us Page </h1>
+    <UserContext.Consumer>
+  {(value)=>console.log(value)}
+
+    </UserContext.Consumer>
+    <UserContext.Consumer>
+  {({user})=> <h4>{user.name} --- {user.email}</h4>}
+
+    </UserContext.Consumer>
     <p>{" "} This is Chapter 7</p>
      
     <ProfileClassComponemt name={"Child 1"}/>
