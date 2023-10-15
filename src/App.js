@@ -12,6 +12,8 @@ import RestaurantMenu from "./components/restaurantMenu";
 import Profile from "./components/profile";
 import Shimmer from "./components/shimmer";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 
 const Instamart = lazy(()=>import("./components/instamart"));
@@ -45,6 +47,7 @@ const AppLayout = ()=>{
     email : "swapnildeka@gmail.com"
   });
   return(
+    <Provider store = {store}>
     <UserContext.Provider value ={{
       user:user,
       setUser :setUser
@@ -53,6 +56,7 @@ const AppLayout = ()=>{
     <Outlet/>
     <Footer/>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
